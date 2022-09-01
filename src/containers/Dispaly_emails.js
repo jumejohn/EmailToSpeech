@@ -1,6 +1,9 @@
 import DisplaySpeech from "./Audio_file";
+import { useSelector } from "react-redux";
 
 const DisplayEmails = () => {
+  const emailObject = useSelector((state) => state.emailState)
+  console.log(emailObject)
   return (
     <table className="table table-hover">
       <thead>
