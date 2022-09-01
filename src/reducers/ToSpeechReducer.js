@@ -5,7 +5,7 @@ const textSpeechReducer = (state = [], action) => {
     case FETCH_SPEECH:
       const data = action.payload;
 
-      return [data, ...state];
+      return [data];
 
     default:
       return state;

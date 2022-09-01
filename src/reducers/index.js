@@ -3,8 +3,8 @@ import textSpeechReducer from "./ToSpeechReducer";
 import refreshEmailReducer from "./EmailsReducer";
 
 const rootReducer = combineReducers({
-  textSpeechState: textSpeechReducer,
-  emailState: refreshEmailReducer
+  speech: textSpeechReducer,
+  emailState: refreshEmailReducer,
 });
 
 export default rootReducer;
