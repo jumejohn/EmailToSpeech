@@ -116,10 +116,17 @@ function User() {
 
   return (
     <div className="App">
-      <h1>app</h1>
-      <Login />
-      <Logout />
-      <button onClick={getLabelList}>Get Email</button>
+      <h1>Login Below</h1>
+      <div className="container">
+        <div className="btn-group" role="group" aria-label="Basic example">
+          <Login />
+          <Logout />
+        </div>
+        <hr />
+        <div className="container">
+          <button onClick={getLabelList}>Get Email</button>
+        </div>
+      </div>
     </div>
   );
 }

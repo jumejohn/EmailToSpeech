@@ -29,7 +29,9 @@ const DisplayEmails = () => {
         {emailObject.map((emailItem) => (
           <tr id={emailItem.id}>
             <td id={emailItem.id + "from"}>{emailItem.from}</td>
-            <td id={emailItem.id + "subj"}>{emailItem.subject}</td>
+            <td id={emailItem.id + "subj"}>
+              <strong>{emailItem.subject}</strong>
+            </td>
             <td id={emailItem.id + "snip"}>{emailItem.snippet}</td>
             <td id={emailItem.id + "play"}>{renderPlayer(emailItem.body)}</td>
           </tr>
