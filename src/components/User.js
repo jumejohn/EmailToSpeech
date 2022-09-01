@@ -98,7 +98,6 @@ function User() {
   };
   const dispatchFunc = (obj) => {
     dispatch(refreshEmail(obj));
-    dispatch(fetchSpeech(obj.body));
   };
 
   const decodeEmailBody = (codedMessageText) => {

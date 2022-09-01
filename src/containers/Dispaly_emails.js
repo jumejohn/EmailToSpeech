@@ -7,9 +7,9 @@ const DisplayEmails = () => {
 
   const renderPlayer = (text) => {
     if (emailObject) {
-      const srcUrl = `http://api.voicerss.org/?key=${VOICERSSAPIKEY}&hl=en-us&v=Amy&c=ogg&src=${text}`;
+      const srcUrl = `http://api.voicerss.org/?key=${VOICERSSAPIKEY}&hl=en-us&v=Linda&c=ogg&src=${text}`;
       console.log(srcUrl);
-      return <audio src={srcUrl} controls autoPlay />;
+      return <audio src={srcUrl} controls />;
     } else {
       return "please reload your email";
     }
