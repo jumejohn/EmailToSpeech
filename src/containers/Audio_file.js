@@ -8,11 +8,7 @@ const DisplaySpeech = () => {
     //return speech.map((t, index) => {
     const srcUrl = `http://api.voicerss.org/?key=${VOICERSSAPIKEY}&hl=en-us&v=Amy&c=ogg&src=Time to get to work`;
     console.log(srcUrl);
-    return (
-      <td>
-        <audio src={srcUrl} controls autoPlay />
-      </td>
-    );
+    return <audio src={srcUrl} controls autoPlay />;
   };
   return <td>{renderPlayer()}</td>;
 };
