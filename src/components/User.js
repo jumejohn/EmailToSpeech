@@ -2,7 +2,7 @@ import Login from "./Login";
 import Logout from "./Logout";
 import { gapi } from "gapi-script";
 import React, { useEffect } from "react";
-import { fetchSpeech, refreshEmail } from "../actions";
+import { refreshEmail } from "../actions";
 import { useDispatch } from "react-redux";
 
 const CLIENT_ID = process.env.REACT_APP_GOOGLE_CLIENT_ID;
@@ -50,7 +50,7 @@ function User() {
   const getEmailsList = (listId) => {
     let accessToken = gapi.auth.getToken().access_token;
     fetch(
-      `https://gmail.googleapis.com/gmail/v1/users/me/messages/?labelIds=${listId}`,
+      `https://gmail.googleapis.com/gmail/v1/users/me/messages/?labelIds=${listId}&maxResults15`,
       {
         method: "GET",
         headers: new Headers({ Authorization: "Bearer " + accessToken }),
