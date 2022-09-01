@@ -1,8 +1,11 @@
 import DisplaySpeech from "./Audio_file";
+import { useSelector } from "react-redux";
 
 const DisplayEmails = () => {
+  const emailObject = useSelector((state) => state.emailState)
+  console.log(emailObject)
   return (
-    <table class="table table-hover">
+    <table className="table table-hover">
       <thead>
         <tr>
           <th scope="col">#</th>
@@ -18,6 +21,7 @@ const DisplayEmails = () => {
           <td>Otto</td>
           <td>@mdo</td>
         </tr>
+
         <tr>
           <th scope="row">2</th>
           <td>Jacob</td>
@@ -26,7 +30,7 @@ const DisplayEmails = () => {
         </tr>
         <tr>
           <th scope="row">3</th>
-          <td colspan="2">Larry the Bird</td>
+          <td colSpan="2">Larry the Bird</td>
           <DisplaySpeech />
         </tr>
       </tbody>
