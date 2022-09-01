@@ -2,7 +2,7 @@ import DisplaySpeech from "./Audio_file";
 
 const DisplayEmails = () => {
   return (
-    <table class="table table-hover">
+    <table className="table table-hover">
       <thead>
         <tr>
           <th scope="col">#</th>
@@ -26,7 +26,7 @@ const DisplayEmails = () => {
         </tr>
         <tr>
           <th scope="row">3</th>
-          <td colspan="2">Larry the Bird</td>
+          <td colSpan="2">Larry the Bird</td>
           <DisplaySpeech />
         </tr>
       </tbody>
