@@ -11,3 +11,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.emailButtons button {
+  margin: 15px;
+}
+
+.nav-btn {
+  margin: 15px;
+}
+
+.user-image {
+  max-width: 75px;
+}

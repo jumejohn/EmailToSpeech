@@ -1,23 +1,41 @@
 import User from "./User";
+import { useDispatch, useSelector } from "react-redux";
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Login from "./Login";
 import Logout from "./Logout";
 
+
 const Header = () => {
+  const userObject = useSelector((state) => state.userState[0])
+  if (userObject.length === 0) {
+    userObject.name = "Please log in to hear your emails"
+    userObject.imageUrl = "https://cdn.dogsplanet.com/wp-content/uploads/2022/07/A-dog-floating-in-space-upscaled.jpg"
+    }
+      
   return (
 
-  <Container>
-     <Navbar expand="lg" variant="light" bg="light">
-        <Container>
-          <Navbar.Brand >Email to Speech</Navbar.Brand>
-          <Nav><Login /></Nav> 
-          <Nav><Logout /></Nav> 
-        </Container>
-      </Navbar>
+  <div className="container-fluid">
+     <nav className="navbar navbar-expand-lg navbar-light bg-light" >
+        <div className="container">
+          {/* <h1 className="navbar-brand">Email to Speech</h1> */}
+          <div className="card">
+            <div className="card-body">
+              <h2 className="card-title">EMAIL to SPEECH</h2>
+              <h4 className="card-subtitle mb-2 text-muted">{userObject.name}</h4>
+              <img className="card-img-bottom user-image" src={userObject.imageUrl} alt={userObject.name} />
+            </div>
+          </div>
+          <div className="navbar-nav" >
+      
+          <div className="nav-item nav-btn"><Login /></div> 
+          <div className="nav-item nav-btn"><Logout /></div> 
+          </div>
+        </div>
+      </nav>
           <User />
-  </Container>
+  </div>
     )
 };
 
