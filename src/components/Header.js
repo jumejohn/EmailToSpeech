@@ -1,16 +1,22 @@
 import User from "./User";
+import Container from 'react-bootstrap/Container';
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
 
 const Header = () => {
-
   return (
-    <div className="jumbotron jumbotron-fluid">
-      <div className="container">
-        <h1 className="display-4">Email to Speech</h1>
-        <User />
-      </div>
-    </div>
-  );
 
+  <Container>
+     <Navbar expand="lg" variant="light" bg="light">
+        <Container>
+          <Navbar.Brand >Email to Speech</Navbar.Brand>
+          <Nav><Login /></Nav> 
+          <Nav><Logout /></Nav> 
+        </Container>
+      </Navbar>
+          <User />
+  </Container>
+    )
 };
 
 export default Header;

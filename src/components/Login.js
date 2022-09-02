@@ -11,18 +11,16 @@ const Login = () => {
     console.log(`login failed ${res}`);
   };
   return (
-    <div id="signInButton">
-      <GoogleLogin
-        button
-        type="button"
-        className="btn btn-secondary"
-        clientId={CLIENT_ID}
-        buttonText="Login"
-        onSuccess={onSuccess}
-        onFailure={onFailure}
-        cookiePolicy={"single_host_origin"}
-        isSignedIn={true}
-      />
+    <div>
+      <div id='signInButton'>
+        <GoogleLogin
+          clientId={CLIENT_ID}
+          buttonText="login"
+          onSuccess={onSuccess}
+          onFailure={onFailure}
+          cookiePolicy={'single_host_origin'}
+          isSignedIn={true} />
+      </div>
     </div>
   );
 };
