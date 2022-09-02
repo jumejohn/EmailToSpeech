@@ -5,9 +5,11 @@ const VOICERSSAPIKEY = process.env.REACT_APP_VOICERSS_API_KEY;
 const DisplayEmails = () => {
   const emailObject = useSelector((state) => state.emailState);
   const renderPlayer = (text) => {
-    const srcUrl = `http://api.voicerss.org/?key=${VOICERSSAPIKEY}&hl=en-gb&v=Harry&c=ogg&src=${text}`;
-    console.log(srcUrl);
-    return <audio src={srcUrl} controls />;
+    if (text !== undefined) {
+      const srcUrl = `http://api.voicerss.org/?key=${VOICERSSAPIKEY}&hl=en-gb&v=Harry&c=ogg&src=${text}`;
+      console.log(srcUrl);
+      return <audio src={srcUrl} controls />;
+    }
   };
   if (emailObject) {
     return (

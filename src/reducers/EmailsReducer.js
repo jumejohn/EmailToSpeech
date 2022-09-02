@@ -5,6 +5,7 @@ const refreshEmailReducer = (state = [], action) => {
     case REFRESH_EMAIL:
       const data = action.payload;
       return [data, ...state];
+
     case RESET_EMAIL_STATE:
       const emptyState = [];
       return [emptyState];

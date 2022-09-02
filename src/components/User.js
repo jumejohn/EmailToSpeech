@@ -27,7 +27,6 @@ function User() {
   });
 
   const getLabelList = () => {
-    resetEmailState();
     let accessToken = gapi.auth.getToken().access_token;
     fetch(`https://gmail.googleapis.com/gmail/v1/users/me/labels`, {
       method: "GET",
