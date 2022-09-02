@@ -2,7 +2,7 @@ import Login from "./Login";
 import Logout from "./Logout";
 import { gapi } from "gapi-script";
 import React, { useEffect } from "react";
-import { fetchSpeech, refreshEmail, resetEmailState } from "../actions";
+import { refreshEmail, resetEmailState } from "../actions";
 import { useDispatch, useSelector } from "react-redux";
 
 const CLIENT_ID = process.env.REACT_APP_GOOGLE_CLIENT_ID;
@@ -11,9 +11,9 @@ const SCOPES =
   "https://mail.google.com/ https://www.googleapis.com/auth/gmail.labels https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/gmail.modify https://www.googleapis.com/auth/gmail.readonly";
 
 function User() {
-  const emailStateObject = useSelector((state) => state.emailState)
+  const emailStateObject = useSelector((state) => state.emailState);
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   useEffect(() => {
     function start() {
@@ -52,7 +52,7 @@ function User() {
   const getEmailsList = (listId) => {
     let accessToken = gapi.auth.getToken().access_token;
     fetch(
-      `https://gmail.googleapis.com/gmail/v1/users/me/messages/?labelIds=${listId}`,
+      `https://gmail.googleapis.com/gmail/v1/users/me/messages/?labelIds=${listId}&maxResults15`,
       {
         method: "GET",
         headers: new Headers({ Authorization: "Bearer " + accessToken }),
@@ -117,8 +117,8 @@ function User() {
   };
 
   const resetHandler = () => {
-    dispatch(resetEmailState())
-  }
+    dispatch(resetEmailState());
+  };
 
   return (
     <div className="App">
