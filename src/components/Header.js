@@ -2,6 +2,8 @@ import User from "./User";
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
+import Login from "./Login";
+import Logout from "./Logout";
 
 const Header = () => {
   return (
