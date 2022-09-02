@@ -7,7 +7,7 @@ const refreshEmailReducer = (state = [], action) => {
       return [data, ...state]
 
     default:
-      return state
+    return state
   }
 }
 

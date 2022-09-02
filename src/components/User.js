@@ -3,7 +3,7 @@ import Logout from './Logout';
 import { gapi } from 'gapi-script';
 import React, {useEffect} from 'react';
 import { refreshEmail } from '../actions';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 const CLIENT_ID = process.env.REACT_APP_GOOGLE_CLIENT_ID
 const API_KEY = process.env.REACT_APP_GOOGLE_API_KEY
@@ -11,6 +11,8 @@ const SCOPES = "https://mail.google.com/ https://www.googleapis.com/auth/gmail.l
 
 
 function User() {
+  const emailStateObject = useSelector((state) => state.emailState)
+
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -78,12 +80,17 @@ function User() {
         snippet: snippet,
         body: decodedBody
       }
+      // filterEmailsAgainstState(emailObject)
       dispatchFunc(emailObject)
       // console.log(emailObject)
     })
   }
   const dispatchFunc = (obj) =>{
     dispatch(refreshEmail(obj))
+    
+  }
+  
+  const filterEmailsAgainstState = (newEmails) =>{
 
   }
 

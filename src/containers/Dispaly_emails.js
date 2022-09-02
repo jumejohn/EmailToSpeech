@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 const DisplayEmails = () => {
   const emailObject = useSelector((state) => state.emailState)
-
+  // console.log(emailObject)
   return (
     <table className="table table-hover">
       <thead>
