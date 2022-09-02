@@ -1,18 +1,15 @@
 import User from "./User";
 import { useDispatch, useSelector } from "react-redux";
-import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
 import Login from "./Login";
 import Logout from "./Logout";
 
 
 const Header = () => {
   const userObject = useSelector((state) => state.userState[0])
-  if (userObject.length === 0) {
+  if (userObject.name === ''){
     userObject.name = "Please log in to hear your emails"
     userObject.imageUrl = "https://cdn.dogsplanet.com/wp-content/uploads/2022/07/A-dog-floating-in-space-upscaled.jpg"
-    }
+    } 
       
   return (
 
