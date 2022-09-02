@@ -2,8 +2,8 @@ import Login from "./Login";
 import Logout from "./Logout";
 import { gapi } from "gapi-script";
 import React, { useEffect } from "react";
-import { fetchSpeech, refreshEmail } from "../actions";
-import { useDispatch } from "react-redux";
+import { fetchSpeech, refreshEmail, resetEmailState } from "../actions";
+import { useDispatch, useSelector } from "react-redux";
 
 const CLIENT_ID = process.env.REACT_APP_GOOGLE_CLIENT_ID;
 const API_KEY = process.env.REACT_APP_GOOGLE_API_KEY;
@@ -11,7 +11,9 @@ const SCOPES =
   "https://mail.google.com/ https://www.googleapis.com/auth/gmail.labels https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/gmail.modify https://www.googleapis.com/auth/gmail.readonly";
 
 function User() {
-  const dispatch = useDispatch();
+  const emailStateObject = useSelector((state) => state.emailState)
+
+  const dispatch = useDispatch()
 
   useEffect(() => {
     function start() {
@@ -114,12 +116,17 @@ function User() {
     return emailSubj[0].value;
   };
 
+  const resetHandler = () => {
+    dispatch(resetEmailState())
+  }
+
   return (
     <div className="App">
       <h1>app</h1>
       <Login />
       <Logout />
       <button onClick={getLabelList}>Get Email</button>
+      <button onClick={resetHandler}>Clear Emails</button>
     </div>
   );
 }

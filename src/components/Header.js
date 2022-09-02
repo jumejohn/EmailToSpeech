@@ -5,9 +5,7 @@ import User from "./User";
 
 const Header = () => {
   return <div>
-    <h2>Here is the Header Area</h2>
-      {/* <Login />
-      <Logout /> */}
+    <h1>EMAIL to SPEECH</h1>
       <User />
     </div>;
 };
