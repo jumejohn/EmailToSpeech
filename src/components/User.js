@@ -24,7 +24,7 @@ function User() {
       });
     }
     gapi.load("client:auth2", start);
-    // getLabelList()
+    
   });
 
   const getLabelList = () => {
@@ -50,6 +50,7 @@ function User() {
   };
 
   const getEmailsList = (listId) => {
+    resetHandler()
     let accessToken = gapi.auth.getToken().access_token;
     fetch(
       `https://gmail.googleapis.com/gmail/v1/users/me/messages/?labelIds=${listId}&maxResults15`,
@@ -84,6 +85,9 @@ function User() {
         const id = val.id;
         const codedBody = val.payload.parts[0].body.data;
         const decodedBody = decodeEmailBody(codedBody);
+        if(decodedBody.length > 5000){
+          return decodedBody.slice(0, 5000)
+        }
         const snippet = val.snippet;
         const emailFrom = returnFrom(val.payload.headers);
         const subject = returnSubject(val.payload.headers);
@@ -122,11 +126,11 @@ function User() {
 
   return (
     <div className="App">
-      <div>
-        {/* <Login />
+      <div className="emailButtons">
+      {/* <Login />
       <Logout /> */}
-        <button onClick={getLabelList}>Get Email</button>
-        <button onClick={resetHandler}>Clear Emails</button>
+      <button type="button" className="btn btn-primary" onClick={getLabelList}>Get Email</button>
+      <button type="button" className="btn btn-secondary" onClick={resetHandler}>Clear Emails</button>
       </div>
     </div>
   );

@@ -17,7 +17,7 @@ export function resetEmailState(){
   }
 }
 
-export function setUser(){
+export function setUser(obj){
   return{
     type: SET_USER,
     payload: obj
