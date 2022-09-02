@@ -1,5 +1,4 @@
 import "./App.css";
-import { useEffect } from "react";
 import Header from "./components/Header";
 import DisplayEmails from "./containers/Dispaly_emails";
 const VOICERSSAPIKEY = process.env.REACT_APP_VOICERSS_API_KEY;
