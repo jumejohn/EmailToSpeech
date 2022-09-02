@@ -1,6 +1,7 @@
 import User from "./User";
 
 const Header = () => {
+
   return (
     <div className="jumbotron jumbotron-fluid">
       <div className="container">
@@ -9,6 +10,7 @@ const Header = () => {
       </div>
     </div>
   );
+
 };
 
 export default Header;

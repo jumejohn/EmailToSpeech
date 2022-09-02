@@ -1,15 +1,15 @@
-import { FETCH_SPEECH } from "../actions";
+// import { FETCH_SPEECH } from "../actions";
 
-const textSpeechReducer = (state = [], action) => {
-  switch (action.type) {
-    case FETCH_SPEECH:
-      const data = action.payload;
+// const textSpeechReducer = (state = [], action) => {
+//   switch (action.type) {
+//     case FETCH_SPEECH:
+//       const data = action.payload;
 
-      return [data];
+//       return [data];
 
-    default:
-      return state;
-  }
-};
+//     default:
+//       return state;
+//   }
+// };
 
-export default textSpeechReducer;
+// export default textSpeechReducer;
