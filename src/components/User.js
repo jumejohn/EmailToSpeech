@@ -85,6 +85,9 @@ function User() {
         const id = val.id;
         const codedBody = val.payload.parts[0].body.data;
         const decodedBody = decodeEmailBody(codedBody);
+        if(decodedBody.length > 5000){
+          return decodedBody.slice(0, 5000)
+        }
         const snippet = val.snippet;
         const emailFrom = returnFrom(val.payload.headers);
         const subject = returnSubject(val.payload.headers);

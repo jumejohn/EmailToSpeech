@@ -14,7 +14,7 @@ const Header = () => {
   return (
 
   <div className="container-fluid">
-     <nav className="navbar navbar-expand-lg navbar-light bg-light" >
+    <nav className="navbar navbar-expand-lg navbar-light bg-light" >
         <div className="container">
           {/* <h1 className="navbar-brand">Email to Speech</h1> */}
           <div className="card">
