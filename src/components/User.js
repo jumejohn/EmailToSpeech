@@ -123,12 +123,10 @@ function User() {
   return (
     <div className="App">
       <div>
-
-      
-      {/* <Login />
+        {/* <Login />
       <Logout /> */}
-      <button onClick={getLabelList}>Get Email</button>
-      <button onClick={resetHandler}>Clear Emails</button>
+        <button onClick={getLabelList}>Get Email</button>
+        <button onClick={resetHandler}>Clear Emails</button>
       </div>
     </div>
   );
