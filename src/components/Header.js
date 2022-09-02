@@ -1,5 +1,3 @@
-import Login from "./Login";
-import Logout from "./Logout";
 import User from "./User";
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
@@ -17,11 +15,7 @@ const Header = () => {
         </Container>
       </Navbar>
           <User />
-
-
-
   </Container>
-
     )
 };
 

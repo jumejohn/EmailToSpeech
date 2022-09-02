@@ -7,7 +7,7 @@ const DisplayEmails = () => {
 
   const renderPlayer = (text) => {
     if (emailObject) {
-      const srcUrl = `http://api.voicerss.org/?key=${VOICERSSAPIKEY}&hl=en-us&v=Linda&c=ogg&src=${text}`;
+      const srcUrl = `http://api.voicerss.org/?key=${VOICERSSAPIKEY}&hl=en-gb&v=Harry&c=ogg&src=${text}`;
       console.log(srcUrl);
       return <audio src={srcUrl} controls />;
     } else {
@@ -29,7 +29,9 @@ const DisplayEmails = () => {
         {emailObject.map((emailItem) => (
           <tr id={emailItem.id}>
             <td id={emailItem.id + "from"}>{emailItem.from}</td>
-            <td id={emailItem.id + "subj"}>{emailItem.subject}</td>
+            <td id={emailItem.id + "subj"}>
+              <strong>{emailItem.subject}</strong>
+            </td>
             <td id={emailItem.id + "snip"}>{emailItem.snippet}</td>
             <td id={emailItem.id + "play"}>{renderPlayer(emailItem.body)}</td>
           </tr>
