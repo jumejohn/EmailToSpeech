@@ -1,13 +1,16 @@
-import Login from "./Login";
-import Logout from "./Logout";
 import User from "./User";
 
-
 const Header = () => {
-  return <div>
-    <h1>EMAIL to SPEECH</h1>
-      <User />
-    </div>;
+
+  return (
+    <div className="jumbotron jumbotron-fluid">
+      <div className="container">
+        <h1 className="display-4">Email to Speech</h1>
+        <User />
+      </div>
+    </div>
+  );
+
 };
 
 export default Header;
