@@ -7,18 +7,21 @@ import Logout from "./Logout";
 
 const Header = () => {
   return (
-
-  <Container>
-     <Navbar expand="lg" variant="light" bg="light">
+    <Container>
+      <Navbar expand="lg" variant="light" bg="light">
         <Container>
-          <Navbar.Brand >Email to Speech</Navbar.Brand>
-          <Nav><Login /></Nav> 
-          <Nav><Logout /></Nav> 
+          <Navbar.Brand>Email to Speech</Navbar.Brand>
+          <Nav>
+            <Login />
+          </Nav>
+          <Nav>
+            <Logout />
+          </Nav>
         </Container>
       </Navbar>
-          <User />
-  </Container>
-    )
+      <User />
+    </Container>
+  );
 };
 
 export default Header;
