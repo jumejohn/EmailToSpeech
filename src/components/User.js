@@ -24,10 +24,10 @@ function User() {
       });
     }
     gapi.load("client:auth2", start);
-    
   });
 
   const getLabelList = () => {
+    resetEmailState();
     let accessToken = gapi.auth.getToken().access_token;
     fetch(`https://gmail.googleapis.com/gmail/v1/users/me/labels`, {
       method: "GET",
@@ -50,7 +50,7 @@ function User() {
   };
 
   const getEmailsList = (listId) => {
-    resetHandler()
+    resetHandler();
     let accessToken = gapi.auth.getToken().access_token;
     fetch(
       `https://gmail.googleapis.com/gmail/v1/users/me/messages/?labelIds=${listId}&maxResults15`,
@@ -85,8 +85,8 @@ function User() {
         const id = val.id;
         const codedBody = val.payload.parts[0].body.data;
         const decodedBody = decodeEmailBody(codedBody);
-        if(decodedBody.length > 5000){
-          return decodedBody.slice(0, 5000)
+        if (decodedBody.length > 5000) {
+          return decodedBody.slice(0, 5000);
         }
         const snippet = val.snippet;
         const emailFrom = returnFrom(val.payload.headers);
@@ -101,9 +101,6 @@ function User() {
         dispatchFunc(emailObject);
         // console.log(emailObject)
       });
-  };
-  const dispatchFunc = (obj) => {
-    dispatch(refreshEmail(obj));
   };
 
   const decodeEmailBody = (codedMessageText) => {
@@ -124,13 +121,29 @@ function User() {
     dispatch(resetEmailState());
   };
 
+  const dispatchFunc = (obj) => {
+    dispatch(refreshEmail(obj));
+  };
+
   return (
     <div className="App">
       <div className="emailButtons">
-      {/* <Login />
+        {/* <Login />
       <Logout /> */}
-      <button type="button" className="btn btn-primary" onClick={getLabelList}>Get Email</button>
-      <button type="button" className="btn btn-secondary" onClick={resetHandler}>Clear Emails</button>
+        <button
+          type="button"
+          className="btn btn-primary"
+          onClick={getLabelList}
+        >
+          Get Email
+        </button>
+        <button
+          type="button"
+          className="btn btn-secondary"
+          onClick={resetHandler}
+        >
+          Clear Emails
+        </button>
       </div>
     </div>
   );

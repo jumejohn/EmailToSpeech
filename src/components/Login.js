@@ -5,11 +5,10 @@ import { setUser } from "../actions";
 const CLIENT_ID = process.env.REACT_APP_GOOGLE_CLIENT_ID;
 
 const Login = () => {
-  const userObject = useSelector((state) => state.userState)
-  const dispatch = useDispatch()
+  const userObject = useSelector((state) => state.userState);
+  const dispatch = useDispatch();
   const onSuccess = (res) => {
-    dispatch(setUser(res.profileObj))
-
+    dispatch(setUser(res.profileObj));
   };
 
   const onFailure = (res) => {
