@@ -17,14 +17,15 @@ const Login = () => {
   };
   return (
     <div>
-      <div id='signInButton'>
+      <div id="signInButton">
         <GoogleLogin
           clientId={CLIENT_ID}
-          buttonText="login"
+          buttonText="Login"
           onSuccess={onSuccess}
           onFailure={onFailure}
-          cookiePolicy={'single_host_origin'}
-          isSignedIn={true} />
+          cookiePolicy={"single_host_origin"}
+          isSignedIn={true}
+        />
       </div>
     </div>
   );

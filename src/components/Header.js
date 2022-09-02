@@ -12,7 +12,6 @@ const Header = () => {
     } 
       
   return (
-
   <div className="container-fluid">
     <nav className="navbar navbar-expand-lg navbar-light bg-light" >
         <div className="container">
@@ -34,6 +33,7 @@ const Header = () => {
           <User />
   </div>
     )
+
 };
 
 export default Header;

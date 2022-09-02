@@ -127,8 +127,6 @@ function User() {
   return (
     <div className="App">
       <div className="emailButtons">
-
-      
       {/* <Login />
       <Logout /> */}
       <button type="button" className="btn btn-primary" onClick={getLabelList}>Get Email</button>
